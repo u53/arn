@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://mybatis.org/schema/mybatis-mapper">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form method="post" action="addUser">
+        <label>用户名：</label>
+        <input type="text" name="userName">
+        <label>生日：</label>
+        <input type="text" name="birthday">
+        <select name="role.id" >
+            <option  th:each="r:${role}"   th:text="${r.roleName}" th:value="${r.id}"></option>
+        </select>
+        <input type="submit"value="新增">
+    </form>
+
+</body>
+</html>

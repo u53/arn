@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <table>
+
+
+     <a href="add">新增用户</a>
+     <form method="post" action="list">
+
+         <input type="text" name="userName">
+         <input type="submit" value="提交">
+
+     </form>
+
+     <tr>
+         <td>编号</td>
+         <td>姓名</td>
+         <td>生日</td>
+         <td>操作</td>
+     </tr>
+
+     <tr th:each="u:${user}">
+         <td th:text="${u.id}"></td>
+         <td th:text="${u.userName}"></td>
+         <td th:text="${u.birthday}"></td>
+         <td></td>
+     </tr>
+
+
+ </table>
+
+</body>
+</html>
